@@ -115,14 +115,14 @@ program
   .command("convert")
   .description("Convert a Revue export to WXR")
   .argument("<filepath>", "path to Revue export zip file")
-  .option("--output-path", "path to the output WXR file")
+  .option("--output", "path to the output WXR file")
   .action(async (zipFile, options) => {
     const filesMap = await parseFilesFromZip(zipFile);
     const posts = await getPosts(zipFile, filesMap);
 
     const wxr = postsToWXR(posts);
     const outputPath =
-      options.outputPath ??
+      options.output ??
       path.join(path.dirname(zipFile), `${path.parse(zipFile).name}.xml`);
     fs.writeFileSync(outputPath, wxr);
   });
