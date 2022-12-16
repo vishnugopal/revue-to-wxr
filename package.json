@@ -1,5 +1,8 @@
 {
   "dependencies": {
-    "node-stream-zip": "^1.15.0"
+    "commander": "^9.4.1",
+    "neat-csv": "^7.0.0",
+    "node-stream-zip": "^1.15.0",
+    "xmlbuilder": "^15.1.1"
   }
 }
